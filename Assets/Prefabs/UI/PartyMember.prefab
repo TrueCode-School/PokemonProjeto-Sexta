@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4952519783386579342}
   - component: {fileID: 6141688174992755955}
-  - component: {fileID: 8364411996724913433}
   - component: {fileID: 866636960}
+  - component: {fileID: 9022113436005831419}
   m_Layer: 0
   m_Name: PartyMember
   m_TagString: Untagged
@@ -49,23 +49,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657641502034398720}
   m_CullTransparentMesh: 1
---- !u!114 &8364411996724913433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657641502034398720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32f20e71697478745bec240edab6d95c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nametext: {fileID: 8107859764526797671}
-  leveltext: {fileID: 9105683574169621600}
-  hpBar: {fileID: 9157722362586731678}
-  HpText: {fileID: 7133601907453933015}
-  PreviousHP: 0
 --- !u!114 &866636960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +79,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9022113436005831419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657641502034398720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14addb220630fd4eabed8d03551daac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 8107859764526797671}
+  levelText: {fileID: 9105683574169621600}
+  hpBar: {fileID: 9157722362586731678}
+  highlightedColor: {r: 0.34509805, g: 0, b: 0.8862745, a: 1}
+  ActualColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
 --- !u!1 &1976078440225068534
 GameObject:
   m_ObjectHideFlags: 0
