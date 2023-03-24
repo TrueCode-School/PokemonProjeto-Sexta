@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PartyMember
       objectReference: {fileID: 0}
+    - target: {fileID: 657641502034398720, guid: d8058db01833b0047b830c88e09ad727, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 790446954194264634, guid: d8058db01833b0047b830c88e09ad727, type: 3}
       propertyPath: m_SizeDelta.x
       value: 295.99
@@ -2161,6 +2165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136bba4682ba1094285e07c958985dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  messageText: {fileID: 1330797271}
+  memberSlots: []
 --- !u!1 &661221369
 GameObject:
   m_ObjectHideFlags: 0

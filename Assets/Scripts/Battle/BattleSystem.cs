@@ -19,6 +19,7 @@ public class BattleSystem : MonoBehaviour
     BattleState state;
     int currentAction;
     int currentMove;
+    int currentMember;
 
     PokeCrias playerParty;
     Pokemon wildPokemon;
@@ -62,6 +63,7 @@ public class BattleSystem : MonoBehaviour
     void OpenPartyScreen()
     {
         state = BattleState.PartyScreen;
+        partyScreen.SetPartyData(playerParty.Pokemons);
         partyScreen.gameObject.SetActive(true);
     }
 
@@ -186,6 +188,10 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.PlayerMove)
         {
             HandleMoveSelection();
+        }
+        if (state == BattleState.PartyScreen)
+        {
+            //HandlePartySelection();
         }
     }
 
