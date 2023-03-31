@@ -2075,6 +2075,14 @@ MonoBehaviour:
     level: 10
   - _base: {fileID: 11400000, guid: e84de93e18d9b8945b486b47c7db70f9, type: 2}
     level: 30
+  - _base: {fileID: 11400000, guid: e84de93e18d9b8945b486b47c7db70f9, type: 2}
+    level: 55
+  - _base: {fileID: 11400000, guid: e84de93e18d9b8945b486b47c7db70f9, type: 2}
+    level: 55
+  - _base: {fileID: 11400000, guid: e84de93e18d9b8945b486b47c7db70f9, type: 2}
+    level: 55
+  - _base: {fileID: 11400000, guid: e84de93e18d9b8945b486b47c7db70f9, type: 2}
+    level: 55
 --- !u!1 &627316689
 GameObject:
   m_ObjectHideFlags: 0
@@ -4119,6 +4127,7 @@ MonoBehaviour:
   playerHud: {fileID: 1812683000}
   dialogueBox: {fileID: 104787316}
   partyScreen: {fileID: 627316693}
+  currentMember: 0
 --- !u!1 &1551632367
 GameObject:
   m_ObjectHideFlags: 0

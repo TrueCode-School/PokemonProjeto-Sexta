@@ -19,7 +19,7 @@ public class BattleSystem : MonoBehaviour
     BattleState state;
     int currentAction;
     int currentMove;
-    int currentMember;
+   [SerializeField] int currentMember;
 
     PokeCrias playerParty;
     Pokemon wildPokemon;
@@ -42,6 +42,8 @@ public class BattleSystem : MonoBehaviour
         enemyUnit.Setup(wildPokemon);
         playerHud.SetData(playerUnit.Pokemon);
         enemyHud.SetData(enemyUnit.Pokemon);
+
+        partyScreen.Init();
 
         dialogueBox.SetMoveNames(playerUnit.Pokemon.Moves);
 
@@ -191,7 +193,7 @@ public class BattleSystem : MonoBehaviour
         }
         if (state == BattleState.PartyScreen)
         {
-            //HandlePartySelection();
+            HandlePartySelection();
         }
     }
 
@@ -284,6 +286,74 @@ public class BattleSystem : MonoBehaviour
             dialogueBox.EnableMoveSelector(false);
             dialogueBox.EnableDialogueText(true);
             StartCoroutine(PerformPlayerMove());
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            dialogueBox.EnableDialogueText(true);
+            dialogueBox.EnableActionSelector(true);
+            dialogueBox.EnableMoveSelector(false);
+            PlayerAction();
+        }
+    }
+
+
+    void HandlePartySelection()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (currentMember < playerParty.Pokemons.Count - 1)
+            {
+                ++currentMember;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            if (currentMember > 0)
+            {
+                --currentMember;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            if (currentMember < playerParty.Pokemons.Count - 2)
+            {
+                currentMember += 2;
+            }
+            else if (currentMember == playerParty.Pokemons.Count - 1)
+            {
+                currentMember = 1;
+            }
+            else
+            {
+                currentMember = 0;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if (currentMember > 1)
+            {
+                currentMember -= 2;
+            }
+            else if (currentMember == 1)
+            {
+                currentMember = playerParty.Pokemons.Count - 1;
+            }
+            else if (currentMember == 0)
+            {
+                currentMember = playerParty.Pokemons.Count - 2;
+            }
+        }
+
+        //currentMember = Mathf.Clamp(currentMember, 0, playerParty.Pokemons.Count - 1);
+        partyScreen.updateMemberSelection(currentMember);
+
+
+        //Voltar
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            partyScreen.gameObject.SetActive(false);
+            PlayerAction();
         }
     }
 }
